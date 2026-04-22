@@ -40,11 +40,3 @@ for col, feat in zip([c1, c2, c3, c4], features):
         </div>
         """, unsafe_allow_html=True)
 
-st.markdown("""
-    <style>
-    /* This hides the 'X' button inside the sidebar and the '>' button on the main page */
-    [data-testid="stSidebarCollapseButton"] {
-        display: none;
-    }
-    </style>
-""", unsafe_allow_html=True)

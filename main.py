@@ -40,9 +40,29 @@ set_background(os.path.join("images", "9.jpg"))
 
 st.markdown("""
     <style>
-    /* This hides the 'X' button inside the sidebar and the '>' button on the main page */
+    /* 1. Hide the collapse/close button on Desktop & Mobile */
     [data-testid="stSidebarCollapseButton"] {
-        display: none;
+        display: none !important;
+    }
+
+    /* 2. Target the mobile-specific 'Sidebar' overlay trigger */
+    button[aria-label="Open sidebar"] {
+        display: none !important;
+    }
+
+    /* 3. Mobile specific adjustment: Ensure the sidebar doesn't 
+       auto-collapse when a user taps a link */
+    @media (max-width: 768px) {
+        /* This keeps the sidebar container visible on smaller screens */
+        [data-testid="stSidebar"] {
+            left: 0 !important;
+            position: relative !important;
+        }
+        
+        /* Forces the main content to wait for the sidebar */
+        .main {
+            margin-left: 0 !important;
+        }
     }
     </style>
 """, unsafe_allow_html=True)
