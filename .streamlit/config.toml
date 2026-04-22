@@ -1,0 +1,37 @@
+# Modern Diner Theme - An artisan take on the classic hotdog aesthetic
+# Warm, appetizing, but clean and easy on the eyes
+
+[theme]
+primaryColor = "#D9381E"          # Tomato Red (softer, richer than pure red)
+backgroundColor = "#FDF8F5"       # Warm off-white / "Bun" color (replaces harsh yellow)
+secondaryBackgroundColor = "#F5EBE6" # Slightly darker warm tone for contrast
+codeBackgroundColor = "#EADBD4"   # Soft neutral for code blocks
+textColor = "#2D2323"             # Deep charcoal/brown for readable, high-contrast text
+linkColor = "#D9381E"             # Matching Tomato Red
+borderColor = "#EADBD4"           # Subtle, soft borders
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "0.5rem"             # Changed from "full" to slight rounding for a modern UI feel
+buttonRadius = "0.5rem"
+font = "sans serif"               # Streamlit natively supports "sans serif", "serif", or "monospace"
+codeFont = "monospace"
+codeFontSize = "0.875rem"
+codeTextColor = "#A32A17"         # Dark muted red for code text
+baseFontSize = 16
+baseFontWeight = 400              # Standard weight for better readability
+headingFontSizes = ["32px", "26px", "20px", "18px", "16px", "14px"]
+headingFontWeights = [700, 700, 600, 600, 600, 600]
+linkUnderline = false
+chartCategoricalColors = ["#D9381E", "#F2A900", "#E07A5F", "#3D405B", "#F4F1DE", "#81B29A", "#E29578"]
+
+# Hotdog color palette (Modernized accents)
+redColor = "#D9381E"              # Tomato Red
+yellowColor = "#F2A900"           # Artisan Mustard
+orangeColor = "#E07A5F"           # Terracotta/Burnt Orange
+
+[theme.sidebar]
+backgroundColor = "#F5EBE6"       # Soft warm gray/beige
+secondaryBackgroundColor = "#EADBD4"
+codeBackgroundColor = "#FFFFFF"
+textColor = "#2D2323"             # Dark text for readability
+borderColor = "#EADBD4"
