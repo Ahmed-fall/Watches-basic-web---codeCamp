@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 
 # 1. Page Config
-st.set_page_config(page_title="AI Watch Expert | WatchVault", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="AI Watch Expert | WatchVault", page_icon="", layout="wide")
 
 # 2. Background Image Injection
 def set_background(image_path):
@@ -78,7 +78,7 @@ st.markdown("""
 # 4. Header UI
 st.markdown("""
 <div class="page-title-container">
-    <div class="page-title">🤖 Horology AI Expert</div>
+    <div class="page-title"> Horology AI Expert</div>
     <div class="page-subtitle">Consult our master watchmaker to find your perfect timepiece.</div>
 </div>
 """, unsafe_allow_html=True)

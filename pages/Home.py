@@ -2,41 +2,67 @@ import streamlit as st
 
 st.markdown("""
     <style>
+    /* Hero Section with high-contrast gradient */
     .hero-container {
-        background: linear-gradient(180deg, rgba(14, 17, 23, 0.85) 0%, rgba(14, 17, 23, 0.6) 100%);
-        padding: 4rem 2rem; border-radius: 12px; text-align: center;
-        border: 1px solid rgba(212, 175, 55, 0.2); backdrop-filter: blur(8px);
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.7) 100%);
+        padding: 5rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        backdrop-filter: blur(10px);
+        margin-bottom: 3rem;
     }
-    .hero-title { color: #D4AF37; font-size: 4rem; font-weight: 700; text-transform: uppercase; }
+    .hero-title {
+        color: #D4AF37;
+        font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive font size */
+        font-weight: 800;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    /* Feature Cards: Deep Black with Gold Border */
     .premium-card {
-        background: rgba(20, 22, 28, 0.85); border-top: 3px solid #D4AF37;
-        padding: 2.5rem 1.5rem; border-radius: 8px; text-align: center; height: 100%;
+        background: rgba(5, 5, 5, 0.9) !important;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 2.5rem 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        height: 100%;
+        transition: all 0.3s ease;
+    }
+    .premium-card:hover {
+        border-color: #D4AF37;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.6);
     }
     </style>
     
     <div class="hero-container">
         <div class="hero-title">WatchVault</div>
-        <div style="color: #F0F2F6; font-size: 1.3rem;">Curated luxury timepieces for the modern connoisseur.</div>
+        <div class="hero-subtitle">PRECISION • HERITAGE • LUXURY</div>
     </div>
 """, unsafe_allow_html=True)
 
-st.markdown("<br>", unsafe_allow_html=True)
-
-c1, c2, c3, c4 = st.columns(4)
+cols = st.columns(4)
 features = [
-    {"icon": "🕰️", "title": "Curated", "desc": "Fine Swiss-inspired watches."},
-    {"icon": "🤖", "title": "AI Expert", "desc": "Consult our horology AI."},
-    {"icon": "🛡️", "title": "Secure", "desc": "Encrypted data storage."},
-    {"icon": "💎", "title": "Exclusive", "desc": "Limited editions."}
+    {"icon": "🕰️", "title": "Curated", "desc": "Swiss-engineered excellence."},
+    {"icon": "🤖", "title": "AI Expert", "desc": "Personal horology consultant."},
+    {"icon": "🛡️", "title": "Secure", "desc": "Encrypted digital ownership."},
+    {"icon": "💎", "title": "Exclusive", "desc": "Rare boutique limited editions."}
 ]
 
-for col, feat in zip([c1, c2, c3, c4], features):
+for col, feat in zip(cols, features):
     with col:
         st.markdown(f"""
         <div class="premium-card">
-            <div style="font-size: 2.8rem;">{feat["icon"]}</div>
-            <div style="color: #D4AF37; font-weight: bold;">{feat["title"]}</div>
-            <div style="color: #D1D5DB;">{feat["desc"]}</div>
+            <div style="font-size: 3rem; margin-bottom: 15px;">{feat["icon"]}</div>
+            <div style="color: #D4AF37; font-weight: bold; letter-spacing: 1px;">{feat["title"]}</div>
+            <div style="color: #BBBBBB; font-size: 0.9rem; margin-top: 10px; line-height: 1.5;">{feat["desc"]}</div>
         </div>
         """, unsafe_allow_html=True)
-
