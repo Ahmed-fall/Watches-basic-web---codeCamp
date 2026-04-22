@@ -40,28 +40,34 @@ set_background(os.path.join("images", "9.jpg"))
 
 st.markdown("""
     <style>
-    /* 1. Hide the collapse/close button on Desktop & Mobile */
-    [data-testid="stSidebarCollapseButton"] {
-        display: none !important;
+    /* target the sidebar container */
+    [data-testid="stSidebar"] {
+        transition: width 0.3s ease;
     }
 
-    /* 2. Target the mobile-specific 'Sidebar' overlay trigger */
-    button[aria-label="Open sidebar"] {
-        display: none !important;
-    }
-
-    /* 3. Mobile specific adjustment: Ensure the sidebar doesn't 
-       auto-collapse when a user taps a link */
+    /* MOBILE SPECIFIC RULES (Screens smaller than 768px) */
     @media (max-width: 768px) {
-        /* This keeps the sidebar container visible on smaller screens */
+        /* Reduce sidebar width to 60% of the screen instead of 90% */
         [data-testid="stSidebar"] {
-            left: 0 !important;
-            position: relative !important;
+            width: 65vw !important;
+            min-width: 65vw !important;
         }
-        
-        /* Forces the main content to wait for the sidebar */
-        .main {
-            margin-left: 0 !important;
+
+        /* Shrink the navigation text a bit so it fits in the narrower bar */
+        [data-testid="stSidebar"] div[role="navigation"] {
+            font-size: 0.85rem !important;
+        }
+
+        /* Adjust the background image positioning so it doesn't look weird when squeezed */
+        .stApp {
+            background-position: 70% center !important;
+        }
+    }
+
+    /* TABLET SPECIFIC RULES (Optional) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        [data-testid="stSidebar"] {
+            width: 300px !important;
         }
     }
     </style>
